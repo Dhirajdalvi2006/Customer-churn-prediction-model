@@ -49,28 +49,58 @@ def show_exploratory_intelligence(df: pd.DataFrame):
                     color="Churn",
                     barmode="group",
                     title=f"Distribution of {selected_cat} by Churn Status",
-                    color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
+                    color_discrete_map={"No": "#00E676", "Yes": "#FF3D71"},
                     category_orders={"Churn": ["No", "Yes"]},
                     labels={"Churn": "Churn Status", selected_cat: selected_cat}
                 )
                 fig_bar = apply_plotly_theme(fig_bar, height=320)
+
+                # Explicitly enforce vibrant high-contrast trace colors and full opacity
+                for trace in fig_bar.data:
+                    if trace.name == "No":
+                        trace.marker.color = "#00E676"
+                        trace.marker.opacity = 1.0
+                        trace.opacity = 1.0
+                    elif trace.name == "Yes":
+                        trace.marker.color = "#FF3D71"
+                        trace.marker.opacity = 1.0
+                        trace.opacity = 1.0
+
                 fig_bar.update_layout(
+                    plot_bgcolor="#0F172A",
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    title=dict(
+                        text=f"Distribution of {selected_cat} by Churn Status",
+                        font=dict(size=13, color="#F8FAFC", family="Plus Jakarta Sans, sans-serif"),
+                        x=0,
+                        xanchor="left",
+                    ),
                     legend=dict(
                         title=dict(text="Churn Status", font=dict(size=12, color="#F8FAFC")),
-                        font=dict(size=11, color="#CBD5E1"),
-                        bgcolor="rgba(15, 23, 42, 0.85)",
-                        bordercolor="rgba(255, 255, 255, 0.12)",
+                        font=dict(size=11, color="#F1F5F9"),
+                        bgcolor="rgba(15, 23, 42, 0.9)",
+                        bordercolor="rgba(255, 255, 255, 0.15)",
                         borderwidth=1,
                         orientation="h",
                         yanchor="bottom",
                         y=1.02,
                         xanchor="right",
                         x=1,
-                    )
-                )
-                fig_bar.update_traces(
-                    marker_line_width=1,
-                    marker_line_color="rgba(255, 255, 255, 0.15)"
+                    ),
+                    xaxis=dict(
+                        gridcolor="rgba(255, 255, 255, 0.05)",
+                        zerolinecolor="rgba(255, 255, 255, 0.08)",
+                        tickfont=dict(size=11, color="#CBD5E1"),
+                        title=dict(font=dict(size=12, color="#94A3B8")),
+                        automargin=True,
+                    ),
+                    yaxis=dict(
+                        gridcolor="rgba(255, 255, 255, 0.05)",
+                        zerolinecolor="rgba(255, 255, 255, 0.08)",
+                        tickfont=dict(size=11, color="#CBD5E1"),
+                        title=dict(font=dict(size=12, color="#94A3B8")),
+                        automargin=True,
+                    ),
                 )
                 st.plotly_chart(fig_bar, width="stretch")
             
