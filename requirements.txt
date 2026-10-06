@@ -1,10 +1,13 @@
 # RETENTIX AI | Customer Churn Intelligence Studio - Project Dependencies
+# All versions pinned to match the training environment where models were serialized.
+# CRITICAL: scikit-learn==1.6.1 MUST match the version used to save .pkl artifacts.
+# Changing scikit-learn version will cause _RemainderColsList / pickle compatibility errors.
 
 # Core Data Science & ML Stack
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
-joblib>=1.3.0
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0,<3.0.0
+scikit-learn==1.6.1
+joblib>=1.3.0,<2.0.0
 
 # Model Explainability (XAI)
 # SHAP: verified compatible with Python 3.13+, NumPy 2.x, scikit-learn 1.6+,
@@ -19,8 +22,6 @@ seaborn>=0.12.0
 
 # Reporting & Notebook Execution
 python-docx>=0.8.11
-jupyter>=1.0.0
-nbformat>=5.9.0
 
 # Automated Testing & Verification
 pytest>=8.0.0

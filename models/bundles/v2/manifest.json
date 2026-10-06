@@ -173,7 +173,7 @@
  },
  "metadata": {
   "model_type": "GradientBoostingClassifier",
-  "training_timestamp": "2026-09-27T14:03:27",
+  "training_timestamp": "2026-10-06T19:38:38",
   "python_version": "3.13.14",
   "sklearn_version": "1.6.1",
   "dataset_hash": "N/A"
