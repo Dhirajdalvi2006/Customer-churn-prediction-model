@@ -49,9 +49,29 @@ def show_exploratory_intelligence(df: pd.DataFrame):
                     color="Churn",
                     barmode="group",
                     title=f"Distribution of {selected_cat} by Churn Status",
-                    color_discrete_map={"No": "#10B981", "Yes": "#F43F5E"}
+                    color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
+                    category_orders={"Churn": ["No", "Yes"]},
+                    labels={"Churn": "Churn Status", selected_cat: selected_cat}
                 )
                 fig_bar = apply_plotly_theme(fig_bar, height=320)
+                fig_bar.update_layout(
+                    legend=dict(
+                        title=dict(text="Churn Status", font=dict(size=12, color="#F8FAFC")),
+                        font=dict(size=11, color="#CBD5E1"),
+                        bgcolor="rgba(15, 23, 42, 0.85)",
+                        bordercolor="rgba(255, 255, 255, 0.12)",
+                        borderwidth=1,
+                        orientation="h",
+                        yanchor="bottom",
+                        y=1.02,
+                        xanchor="right",
+                        x=1,
+                    )
+                )
+                fig_bar.update_traces(
+                    marker_line_width=1,
+                    marker_line_color="rgba(255, 255, 255, 0.15)"
+                )
                 st.plotly_chart(fig_bar, width="stretch")
             
 
@@ -62,7 +82,7 @@ def show_exploratory_intelligence(df: pd.DataFrame):
                 path=["InternetService", "Contract", "Churn"],
                 values="MonthlyCharges",
                 color="Churn",
-                color_discrete_map={"No": "#10B981", "Yes": "#F43F5E", "(?)": "#6366F1"},
+                color_discrete_map={"No": "#22C55E", "Yes": "#EF4444", "(?)": "#6366F1"},
                 title="Monthly Revenue Allocation across Hierarchy"
             )
             fig_sun = apply_plotly_theme(fig_sun, height=430)
@@ -113,7 +133,7 @@ def show_exploratory_intelligence(df: pd.DataFrame):
                     marginal="box",
                     barmode="overlay",
                     opacity=0.7,
-                    color_discrete_map={"No": "#10B981", "Yes": "#F43F5E"},
+                    color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
                     title=f"Histogram & Boxplot for {selected_num}"
                 )
                 fig_kde = apply_plotly_theme(fig_kde, height=340)
@@ -127,7 +147,7 @@ def show_exploratory_intelligence(df: pd.DataFrame):
                     color="Churn",
                     box=True,
                     points="all",
-                    color_discrete_map={"No": "#10B981", "Yes": "#F43F5E"},
+                    color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
                     title=f"Violin Distribution of {selected_num} by Contract Type"
                 )
                 fig_box = apply_plotly_theme(fig_box, height=340)

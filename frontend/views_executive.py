@@ -81,7 +81,7 @@ def show_executive_command_center(df: pd.DataFrame, full_df: pd.DataFrame, model
                 color="Churn",
                 barmode="group",
                 text_auto=".2s",
-                color_discrete_map={"No": "#10B981", "Yes": "#F43F5E"},
+                color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
                 labels={"MonthlyCharges": "Monthly Revenue ($)", "Contract": "Contract Horizon"}
             )
             fig_rev = apply_plotly_theme(fig_rev, height=330)
@@ -100,7 +100,7 @@ def show_executive_command_center(df: pd.DataFrame, full_df: pd.DataFrame, model
                 names="Status",
                 hole=0.68,
                 color="Status",
-                color_discrete_map={"Retained Customers": "#10B981", "Churned Customers": "#F43F5E"}
+                color_discrete_map={"Retained Customers": "#22C55E", "Churned Customers": "#EF4444"}
             )
             fig_donut.update_traces(textposition="inside", textinfo="percent+label", marker=dict(line=dict(color='#0F172A', width=3)))
             fig_donut = apply_plotly_theme(fig_donut, height=330)
@@ -118,7 +118,7 @@ def show_executive_command_center(df: pd.DataFrame, full_df: pd.DataFrame, model
                 nbins=36,
                 barmode="overlay",
                 opacity=0.75,
-                color_discrete_map={"No": "#10B981", "Yes": "#F43F5E"},
+                color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
                 labels={"tenure": "Tenure (Months in Service)"}
             )
             fig_tenure = apply_plotly_theme(fig_tenure, height=300)

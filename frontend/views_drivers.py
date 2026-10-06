@@ -84,7 +84,7 @@ def show_churn_drivers_and_ecosystem(df: pd.DataFrame):
             color="Churn",
             size="TotalCharges",
             hover_data=["Contract", "PaymentMethod", "InternetService"],
-            color_discrete_map={"No": "#10B981", "Yes": "#F43F5E"},
+            color_discrete_map={"No": "#22C55E", "Yes": "#EF4444"},
             opacity=0.6,
             labels={"tenure": "Tenure (Months)", "MonthlyCharges": "Monthly Bill ($)", "TotalCharges": "Lifetime Spend ($)"}
         )
