@@ -1,1 +1,1 @@
-from backend.model import ChurnModel, load_data, get_eda_stats
+from .model import ChurnModel, load_data, get_eda_stats

@@ -42,8 +42,8 @@ env/
 env.bak/
 venv.bak/
 
-# Streamlit
-.streamlit/
+# Streamlit (only ignore secrets, not config)
+.streamlit/secrets.toml
 
 # OS specific files
 .DS_Store
