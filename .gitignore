@@ -57,3 +57,5 @@ _scan_output.txt
 # Local checkout subdirectories
 customer churn prediction/
 customer-churn-prediction-model/
+
+.vercel

@@ -1,0 +1,17 @@
+# Files and folders to exclude from Vercel deployment
+.git
+.pytest_cache
+__pycache__
+tests
+notebooks
+visualizations
+reports
+*.docx
+_*.py
+_*.json
+_*.txt
+diag_metadata.py
+generate_report.py
+streamlit_app.py
+streamlit_path
+.streamlit

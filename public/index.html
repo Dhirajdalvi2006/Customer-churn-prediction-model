@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RETENTIX AI | Customer Churn Intelligence Studio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="brand-logo-icon">⚡</div>
+        <div>
+          <div class="brand-title">RETENTIX<span>.AI</span></div>
+          <div class="brand-subtitle">Churn Intelligence Studio</div>
+        </div>
+      </div>
+
+      <div class="nav-section-title">Navigation Menu</div>
+      <ul class="nav-list">
+        <li class="nav-item active" data-tab="tab-executive">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Executive Command</span>
+        </li>
+        <li class="nav-item" data-tab="tab-predict">
+          <span class="nav-icon">🔮</span>
+          <span class="nav-text">AI Churn Predictor</span>
+        </li>
+        <li class="nav-item" data-tab="tab-bulk">
+          <span class="nav-icon">📁</span>
+          <span class="nav-text">Bulk Portfolio Scoring</span>
+        </li>
+        <li class="nav-item" data-tab="tab-models">
+          <span class="nav-icon">🤖</span>
+          <span class="nav-text">Model Architecture</span>
+        </li>
+        <li class="nav-item" data-tab="tab-roi">
+          <span class="nav-icon">💼</span>
+          <span class="nav-text">Retention ROI Playbook</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-status">
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <span id="systemHealthBadge">Production Bundle Active</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+      
+      <!-- TAB 1: EXECUTIVE COMMAND CENTER -->
+      <section id="tab-executive" class="tab-content active">
+        <div class="hero-banner">
+          <div class="hero-tag">⚡ Executive Intelligence Suite</div>
+          <h1 class="hero-title">Executive Churn Command Center</h1>
+          <p class="hero-subtitle">High-level subscriber portfolio health, financial exposure analysis, and macro-level churn vulnerability indicators.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Overall Churn Rate</div>
+            <div class="kpi-value" style="color: #EF4444;">26.54%</div>
+            <div class="kpi-subtext">📉 1,869 of 7,043 total subscribers</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Monthly Revenue at Risk</div>
+            <div class="kpi-value" style="color: #F59E0B;">$139,130</div>
+            <div class="kpi-subtext">💰 Active recurring MRR exposure</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Annualized Revenue Loss</div>
+            <div class="kpi-value" style="color: #8B5CF6;">$1.67M</div>
+            <div class="kpi-subtext">📊 Projected 12-month ARR erosion</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">High-Risk Subscribers</div>
+            <div class="kpi-value" style="color: #06B6D4;">1,420</div>
+            <div class="kpi-subtext">⚡ Predicted churn probability &gt; 60%</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🚨 Strategic Intelligence &amp; Urgent Churn Signals</div>
+          </div>
+
+          <div class="signal-box signal-danger">
+            <div style="font-size: 1.4rem;">🚨</div>
+            <div>
+              <div class="signal-title">Month-to-Month Contract Vulnerability</div>
+              <div class="signal-desc">Month-to-month accounts exhibit an alarming <strong>42.7% churn rate</strong>. Converting just 15% to 1-Year plans would save an estimated <strong>$463,000 / year</strong>.</div>
+            </div>
+          </div>
+
+          <div class="signal-box signal-warning">
+            <div style="font-size: 1.4rem;">⚡</div>
+            <div>
+              <div class="signal-title">Fiber Optic Churn Anomaly</div>
+              <div class="signal-desc">Fiber optic subscribers experience a <strong>41.9% churn rate</strong>. Premium pricing combined with a lack of dedicated Tech Support is the primary catalyst.</div>
+            </div>
+          </div>
+
+          <div class="signal-box signal-info">
+            <div style="font-size: 1.4rem;">💳</div>
+            <div>
+              <div class="signal-title">Electronic Check Payment Friction</div>
+              <div class="signal-desc">Customers paying via Electronic Check churn at <strong>45.3%</strong> compared to 15.2% on automated credit cards. Promoting automated autopay eliminates friction.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: AI CHURN PREDICTOR & SIMULATOR -->
+      <section id="tab-predict" class="tab-content">
+        <div class="hero-banner">
+          <div class="hero-tag">🔮 Production ML Inference</div>
+          <h1 class="hero-title">Real-Time AI Churn Predictor &amp; Simulator</h1>
+          <p class="hero-subtitle">Score individual subscriber profiles, evaluate live churn probabilities, and simulate retention intervention outcomes in real time.</p>
+        </div>
+
+        <div class="presets-bar">
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); align-self: center;">Quick Archetypes:</span>
+          <button type="button" class="btn btn-secondary btn-sm btn-preset" data-preset="highRisk">🚨 High-Risk Newcomer</button>
+          <button type="button" class="btn btn-secondary btn-sm btn-preset" data-preset="loyalVeteran">🛡️ Loyal Veteran</button>
+          <button type="button" class="btn btn-secondary btn-sm btn-preset" data-preset="vulnerableFamily">⚖️ Vulnerable Family</button>
+          <button type="button" class="btn btn-secondary btn-sm btn-preset" data-preset="techEnthusiast">💼 Tech Enthusiast</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: start;">
+          <!-- Customer Input Form -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">📝 Subscriber Profile Parameters</div>
+            </div>
+
+            <form id="singlePredictForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Gender</label>
+                  <select id="field_gender" name="gender" class="form-control">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Senior Citizen</label>
+                  <select id="field_SeniorCitizen" name="SeniorCitizen" class="form-control">
+                    <option value="0">No (0)</option>
+                    <option value="1">Yes (1)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Partner</label>
+                  <select id="field_Partner" name="Partner" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Dependents</label>
+                  <select id="field_Dependents" name="Dependents" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tenure (Months)</label>
+                  <input type="number" id="field_tenure" name="tenure" class="form-control" value="2" min="1" max="72">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Service</label>
+                  <select id="field_PhoneService" name="PhoneService" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Multiple Lines</label>
+                  <select id="field_MultipleLines" name="MultipleLines" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No phone service">No phone service</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Internet Service</label>
+                  <select id="field_InternetService" name="InternetService" class="form-control">
+                    <option value="Fiber optic">Fiber optic</option>
+                    <option value="DSL">DSL</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Online Security</label>
+                  <select id="field_OnlineSecurity" name="OnlineSecurity" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No internet service">No internet service</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Online Backup</label>
+                  <select id="field_OnlineBackup" name="OnlineBackup" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No internet service">No internet service</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Device Protection</label>
+                  <select id="field_DeviceProtection" name="DeviceProtection" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No internet service">No internet service</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tech Support</label>
+                  <select id="field_TechSupport" name="TechSupport" class="form-control">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No internet service">No internet service</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Streaming TV</label>
+                  <select id="field_StreamingTV" name="StreamingTV" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Streaming Movies</label>
+                  <select id="field_StreamingMovies" name="StreamingMovies" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Contract Type</label>
+                  <select id="field_Contract" name="Contract" class="form-control">
+                    <option value="Month-to-month">Month-to-month</option>
+                    <option value="One year">One year</option>
+                    <option value="Two year">Two year</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Paperless Billing</label>
+                  <select id="field_PaperlessBilling" name="PaperlessBilling" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Payment Method</label>
+                  <select id="field_PaymentMethod" name="PaymentMethod" class="form-control">
+                    <option value="Electronic check">Electronic check</option>
+                    <option value="Mailed check">Mailed check</option>
+                    <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                    <option value="Credit card (automatic)">Credit card (automatic)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Monthly Charges ($)</label>
+                  <input type="number" step="0.05" id="field_MonthlyCharges" name="MonthlyCharges" class="form-control" value="92.50">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Total Charges ($)</label>
+                  <input type="number" step="0.05" id="field_TotalCharges" name="TotalCharges" class="form-control" value="185.00">
+                </div>
+              </div>
+
+              <div style="margin-top: 24px;">
+                <button type="submit" id="btnSubmitPredict" class="btn btn-primary" style="width: 100%;">
+                  <span>⚡</span> Run AI Risk Assessment
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Prediction Result Card -->
+          <div>
+            <div class="prediction-result-panel">
+              <div class="card-title">🎯 AI Risk Evaluation Output</div>
+
+              <div class="gauge-container">
+                <div class="score-display">
+                  <div id="resProbability" class="score-number">73.5%</div>
+                  <div class="score-label">Predicted Churn Probability</div>
+                </div>
+                <div id="resBadge" class="risk-badge risk-high">High Risk</div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.06); height: 8px; border-radius: 999px; overflow: hidden;">
+                <div id="resProgressBar" style="width: 73.5%; height: 100%; background: #EF4444; transition: width 0.4s ease;"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted);">
+                <span>Retention Probability: <strong id="resRetainProb" style="color: #34D399;">26.5%</strong></span>
+                <span id="resBundle">Model: LogisticRegression (Bundle v2)</span>
+              </div>
+
+              <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 12px; color: #fff;">💡 Automated Retention Interventions</div>
+                <div id="interventionsList">
+                  <!-- Dynamic Interventions -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: BULK PORTFOLIO PREDICTION -->
+      <section id="tab-bulk" class="tab-content">
+        <div class="hero-banner">
+          <div class="hero-tag">📁 Batch Inference Engine</div>
+          <h1 class="hero-title">Bulk Customer Portfolio Scoring</h1>
+          <p class="hero-subtitle">Upload CSV files containing subscriber records to perform vectorized batch churn risk scoring with full schema validation.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📤 Upload &amp; Batch Scoring Controller</div>
+            <button type="button" id="btnLoadDemoBatch" class="btn btn-secondary btn-sm">📥 Load Demo Sample Batch</button>
+          </div>
+
+          <div id="batchDropzone" class="dropzone">
+            <div style="font-size: 2.2rem; margin-bottom: 10px;">📊</div>
+            <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 6px;">Drag and drop your subscriber CSV file here</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">Or click to browse files from your computer</div>
+            <input type="file" id="batchFileInput" accept=".csv" style="display: none;">
+            <div style="display: inline-block; padding: 6px 14px; background: rgba(255,255,255,0.06); border-radius: 999px; font-size: 0.75rem; color: var(--text-muted);">
+              Supports standard Telco Churn CSV schema
+            </div>
+          </div>
+
+          <div id="batchStatus" style="font-size: 0.85rem; color: #A5B4FC; margin-top: 14px; text-align: center;"></div>
+        </div>
+
+        <!-- Batch KPI Grid (Hidden until scored) -->
+        <div id="batchStatsContainer" class="kpi-grid" style="display: none;">
+          <div class="kpi-card">
+            <div class="kpi-label">Total Processed</div>
+            <div id="statTotalBatch" class="kpi-value">0</div>
+            <div class="kpi-subtext">Rows validated &amp; scored</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Predicted Churn</div>
+            <div id="statChurnCount" class="kpi-value" style="color: #EF4444;">0</div>
+            <div class="kpi-subtext">Classified at risk of leaving</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Portfolio Churn Rate</div>
+            <div id="statBatchChurnRate" class="kpi-value" style="color: #F59E0B;">0%</div>
+            <div class="kpi-subtext">Aggregate risk proportion</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">High-Risk Accounts</div>
+            <div id="statHighRiskCount" class="kpi-value" style="color: #8B5CF6;">0</div>
+            <div class="kpi-subtext">&gt; 60% churn probability</div>
+          </div>
+        </div>
+
+        <!-- Batch Results Table -->
+        <div id="batchResultsTableContainer" class="card" style="display: none;">
+          <div class="card-header">
+            <div class="card-title">📋 Scored Portfolio Predictions</div>
+            <button type="button" id="btnExportBatchCsv" class="btn btn-primary btn-sm">💾 Export Scored CSV</button>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Customer ID</th>
+                  <th>Prediction</th>
+                  <th>Churn Prob.</th>
+                  <th>Risk Tier</th>
+                  <th>Contract</th>
+                  <th>Tenure</th>
+                  <th>Monthly</th>
+                </tr>
+              </thead>
+              <tbody id="batchTableBody">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: MODEL ARCHITECTURE & TRANSPARENCY -->
+      <section id="tab-models" class="tab-content">
+        <div class="hero-banner">
+          <div class="hero-tag">🤖 Governance &amp; Reproducibility</div>
+          <h1 class="hero-title">Model Architecture &amp; Production Integrity</h1>
+          <p class="hero-subtitle">Details of the deployed model bundle, feature engineering transformers, and scikit-learn runtime compatibility.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">⚙️ Active Inference Bundle Specification</div>
+          </div>
+
+          <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Active Bundle</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #6366F1; margin-top: 4px;">v2 Champion</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Model Estimator</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-top: 4px;">Pipeline (LogisticRegression)</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Scikit-Learn Version</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #10B981; margin-top: 4px;">1.6.1 (Pinned)</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Decision Threshold</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #F59E0B; margin-top: 4px;">0.50 (Calibrated)</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Input Features</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #06B6D4; margin-top: 4px;">19 Raw / 45 One-Hot</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🛡️ Serialization &amp; Vercel Compatibility Guarantee</div>
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            The model pipeline utilizes a scikit-learn <code>ColumnTransformer</code> combined with standard scaling and one-hot encoding. To resolve the known <code>_RemainderColsList</code> pickle serialization incompatibility, the environment pins <code>scikit-learn==1.6.1</code> across development and serverless deployment targets. Bundle integrity is verified with cryptographic SHA256 manifests.
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: RETENTION ROI & PLAYBOOK -->
+      <section id="tab-roi" class="tab-content">
+        <div class="hero-banner">
+          <div class="hero-tag">💼 Financial Modeling</div>
+          <h1 class="hero-title">Retention Playbook &amp; ROI Simulator</h1>
+          <p class="hero-subtitle">Model the bottom-line financial impact of proactive customer success and targeted retention outreach.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🧮 Interactive ROI Calculator</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+            <div>
+              <div class="form-group" style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <label class="form-label">Targeted At-Risk Subscribers</label>
+                  <span id="roiCountVal" style="font-weight: 800; color: #6366F1;">1,000</span>
+                </div>
+                <input type="range" id="roiTargetCount" min="100" max="3000" step="50" value="1000" class="form-control" style="accent-color: #6366F1;">
+              </div>
+
+              <div class="form-group">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <label class="form-label">Campaign Intervention Success Rate</label>
+                  <span id="roiSuccessVal" style="font-weight: 800; color: #10B981;">25%</span>
+                </div>
+                <input type="range" id="roiSuccessRate" min="5" max="75" step="5" value="25" class="form-control" style="accent-color: #10B981;">
+              </div>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-strong); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: center; gap: 16px;">
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Saved Subscribers</div>
+                <div id="roiSavedCount" style="font-size: 2.2rem; font-weight: 800; color: #10B981; font-family: 'JetBrains Mono';">250</div>
+              </div>
+              <div style="border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Annual Recurring Revenue Recovered</div>
+                <div id="roiRevenueSaved" style="font-size: 2.4rem; font-weight: 800; color: #6366F1; font-family: 'JetBrains Mono';">$225,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
