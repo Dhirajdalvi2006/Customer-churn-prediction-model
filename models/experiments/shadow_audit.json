@@ -1,0 +1,949 @@
+{
+  "audit": "phase4_step7_shadow_scoring_and_promotion_readiness",
+  "analysis_only": true,
+  "promotion_performed": false,
+  "timestamp": "2026-09-27T19:55:07",
+  "v1_bundle_version": "v1",
+  "v2_bundle_version": "v2",
+  "active_bundle": "v1",
+  "sample_size": 1409,
+  "data_source": {
+    "file": "data/telco_customer_churn_cleaned.csv",
+    "subset": "untouched Phase 3B final test set",
+    "split": "train_test_split(test_size=0.2, random_state=42, stratify=y)",
+    "random_seed": 42,
+    "n_total_dataset": 7043,
+    "n_test": 1409,
+    "n_positive": 374,
+    "churn_prevalence": 0.2654364797728886,
+    "synthetic_records_created": false,
+    "dataset_altered": false
+  },
+  "threshold": {
+    "production_threshold_used": 0.5,
+    "phase_3c_analysis_threshold": 0.25,
+    "analysis_threshold_adopted": false,
+    "threshold_changed": false
+  },
+  "class_metadata": {
+    "v1": {
+      "bundle_version": "v1",
+      "model_type": "LogisticRegression",
+      "model_format": "estimator_only",
+      "estimator_type": "LogisticRegression",
+      "classes": [
+        "0",
+        "1"
+      ],
+      "classes_dtype": "int64",
+      "manifest_classes": [
+        "0",
+        "1"
+      ],
+      "classes_match_manifest": true,
+      "positive_class": "1",
+      "positive_semantic_label": "Yes",
+      "positive_class_index": 1,
+      "positive_class_is_yes": true,
+      "manifest_positive_class_index": 1,
+      "manifest_index_agrees_with_classes": true,
+      "uses_yes_as_positive_class": true,
+      "probability_of_positive_class": "predict_proba(...)[..., 1] == classes_[1] == '1'",
+      "decision_threshold": 0.5
+    },
+    "v2": {
+      "bundle_version": "v2",
+      "model_type": "GradientBoostingClassifier",
+      "model_format": "pipeline",
+      "estimator_type": "GradientBoostingClassifier",
+      "classes": [
+        "No",
+        "Yes"
+      ],
+      "classes_dtype": "object",
+      "manifest_classes": [
+        "No",
+        "Yes"
+      ],
+      "classes_match_manifest": true,
+      "positive_class": "Yes",
+      "positive_semantic_label": "Yes",
+      "positive_class_index": 1,
+      "positive_class_is_yes": true,
+      "manifest_positive_class_index": 1,
+      "manifest_index_agrees_with_classes": true,
+      "uses_yes_as_positive_class": true,
+      "probability_of_positive_class": "predict_proba(...)[..., 1] == classes_[1] == 'Yes'",
+      "decision_threshold": 0.5
+    }
+  },
+  "contract_comparison": {
+    "verdict": "DIFFERENT",
+    "n_same": 10,
+    "n_different": 4,
+    "n_unknown": 0,
+    "categories": {
+      "required_columns": {
+        "status": "SAME",
+        "v1_count": 19,
+        "v2_count": 19,
+        "only_in_v1": [],
+        "only_in_v2": [],
+        "v1_order": [
+          "gender",
+          "Partner",
+          "Dependents",
+          "PhoneService",
+          "MultipleLines",
+          "InternetService",
+          "OnlineSecurity",
+          "OnlineBackup",
+          "DeviceProtection",
+          "TechSupport",
+          "StreamingTV",
+          "StreamingMovies",
+          "Contract",
+          "PaperlessBilling",
+          "PaymentMethod",
+          "SeniorCitizen",
+          "tenure",
+          "MonthlyCharges",
+          "TotalCharges"
+        ],
+        "v2_order": [
+          "gender",
+          "Partner",
+          "Dependents",
+          "PhoneService",
+          "MultipleLines",
+          "InternetService",
+          "OnlineSecurity",
+          "OnlineBackup",
+          "DeviceProtection",
+          "TechSupport",
+          "StreamingTV",
+          "StreamingMovies",
+          "Contract",
+          "PaperlessBilling",
+          "PaymentMethod",
+          "SeniorCitizen",
+          "tenure",
+          "MonthlyCharges",
+          "TotalCharges"
+        ]
+      },
+      "categorical_columns": {
+        "status": "SAME",
+        "v1_count": 15,
+        "v2_count": 15,
+        "only_in_v1": [],
+        "only_in_v2": []
+      },
+      "categorical_domains": {
+        "status": "SAME",
+        "v1_domain": {
+          "gender": [
+            "Female",
+            "Male"
+          ],
+          "Partner": [
+            "No",
+            "Yes"
+          ],
+          "Dependents": [
+            "No",
+            "Yes"
+          ],
+          "PhoneService": [
+            "No",
+            "Yes"
+          ],
+          "MultipleLines": [
+            "No",
+            "No phone service",
+            "Yes"
+          ],
+          "InternetService": [
+            "DSL",
+            "Fiber optic",
+            "No"
+          ],
+          "OnlineSecurity": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "OnlineBackup": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "DeviceProtection": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "TechSupport": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "StreamingTV": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "StreamingMovies": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "Contract": [
+            "Month-to-month",
+            "One year",
+            "Two year"
+          ],
+          "PaperlessBilling": [
+            "No",
+            "Yes"
+          ],
+          "PaymentMethod": [
+            "Bank transfer (automatic)",
+            "Credit card (automatic)",
+            "Electronic check",
+            "Mailed check"
+          ]
+        },
+        "v2_domain": {
+          "gender": [
+            "Female",
+            "Male"
+          ],
+          "Partner": [
+            "No",
+            "Yes"
+          ],
+          "Dependents": [
+            "No",
+            "Yes"
+          ],
+          "PhoneService": [
+            "No",
+            "Yes"
+          ],
+          "MultipleLines": [
+            "No",
+            "No phone service",
+            "Yes"
+          ],
+          "InternetService": [
+            "DSL",
+            "Fiber optic",
+            "No"
+          ],
+          "OnlineSecurity": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "OnlineBackup": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "DeviceProtection": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "TechSupport": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "StreamingTV": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "StreamingMovies": [
+            "No",
+            "No internet service",
+            "Yes"
+          ],
+          "Contract": [
+            "Month-to-month",
+            "One year",
+            "Two year"
+          ],
+          "PaperlessBilling": [
+            "No",
+            "Yes"
+          ],
+          "PaymentMethod": [
+            "Bank transfer (automatic)",
+            "Credit card (automatic)",
+            "Electronic check",
+            "Mailed check"
+          ]
+        },
+        "differing_columns": {},
+        "note": "Domains are read from each bundle's own fitted OneHotEncoder.categories_, not copied from a constant."
+      },
+      "numeric_columns": {
+        "status": "SAME",
+        "v1": [
+          "SeniorCitizen",
+          "tenure",
+          "MonthlyCharges",
+          "TotalCharges"
+        ],
+        "v2": [
+          "SeniorCitizen",
+          "tenure",
+          "MonthlyCharges",
+          "TotalCharges"
+        ]
+      },
+      "column_ordering_requirement": {
+        "status": "SAME",
+        "detail": "Both bundles select columns by name through a fitted ColumnTransformer, so caller column order is not significant. Verified by scoring a reversed row.",
+        "v1_reversed_input": "OK",
+        "v2_reversed_input": "ValueError"
+      },
+      "senior_citizen_values": {
+        "status": "DIFFERENT",
+        "numeric_string_probe": {
+          "v1": "OK",
+          "v2": "ValueError"
+        },
+        "text_yes_probe": {
+          "v1": "OK",
+          "v2": "ValueError"
+        },
+        "text_no_probe": {
+          "v1": "OK",
+          "v2": "ValueError"
+        },
+        "v1_accepts": "0/1 numerics, numeric strings, and the text tokens Yes/No/true/false/y/n/t/f via _coerce_senior_citizen.",
+        "v2_accepts": "0/1 numerics and numeric strings only; its SimpleImputer(strategy='median') requires numeric data and raises on text.",
+        "exact_difference": "V2 rejects SeniorCitizen='Yes'/'No' with ValueError while V1 accepts it, so an input shape the production UI accepts today would be rejected by V2."
+      },
+      "total_charges_behaviour": {
+        "status": "DIFFERENT",
+        "nan_probe": {
+          "v1": "OK",
+          "v2": "ValueError"
+        },
+        "numeric_string_probe": {
+          "v1": "OK",
+          "v2": "ValueError"
+        },
+        "v1_policy": "pd.to_numeric(errors='coerce') then fillna with the PERSISTED training median, never a batch median.",
+        "v2_policy": "fitted SimpleImputer(strategy='median') inside the pipeline; median recovered from its statistics_.",
+        "shared_median": 1394.925,
+        "exact_difference": "The imputed VALUE agrees (1394.925), but the mechanism differs: V1 imputes TotalCharges only and externally; V2 imputes all four numeric columns internally."
+      },
+      "numeric_nan_policy": {
+        "status": "SAME",
+        "probe": {
+          "v1": "ValueError",
+          "v2": "ValueError"
+        },
+        "v1": "Only TotalCharges is imputed; a NaN in tenure or MonthlyCharges reaches the StandardScaler unimputed.",
+        "v2": "All four numeric columns pass a fitted SimpleImputer(strategy='median').",
+        "exact_difference": "None observed."
+      },
+      "categorical_nan_policy": {
+        "status": "SAME",
+        "probe": {
+          "v1": "TypeError",
+          "v2": "ValueError"
+        },
+        "v1": "_validate_categoricals calls dropna() before checking, so a NaN categorical passes validation then fails inside the fitted OneHotEncoder.",
+        "v2": "a fitted SimpleImputer(strategy='most_frequent') silently substitutes the modal level and returns a score.",
+        "exact_difference": "None observed."
+      },
+      "infinity_handling": {
+        "status": "SAME",
+        "probe": {
+          "v1": "ValueError",
+          "v2": "ValueError"
+        },
+        "detail": "Both reject non-finite input at the fitted transformer ('Input X contains infinity or a value too large'), so neither silently scores +/-inf."
+      },
+      "unknown_categorical_value": {
+        "status": "SAME",
+        "out_of_domain_probe": {
+          "v1": "ValueError",
+          "v2": "ValueError"
+        },
+        "case_typo_probe": {
+          "v1": "ValueError",
+          "v2": "ValueError"
+        },
+        "v1": "_validate_categoricals rejects any value outside the trained domain with an explicit ValueError; a typo fails loudly.",
+        "v2": "handle_unknown='ignore' silently encodes an unseen level as all-zeros. With drop=None that is an out-of-distribution row (every level of that column off), not a baseline, so a typo yields a confident but wrong score.",
+        "exact_difference": "None observed."
+      },
+      "extra_and_missing_columns": {
+        "status": "SAME",
+        "missing_column_probe": {
+          "v1": "ValueError",
+          "v2": "ValueError"
+        },
+        "extra_column_probe": {
+          "v1": "OK",
+          "v2": "ValueError"
+        },
+        "detail": "Both ignore extra columns (so a labelled frame can be scored) and both reject a missing required column. Only the error TYPE differs (V1 names the field, sklearn says 'columns are missing') -- cosmetic, not behavioural."
+      },
+      "one_hot_scheme": {
+        "status": "DIFFERENT",
+        "v1": {
+          "drop": "first",
+          "handle_unknown": "ignore",
+          "sparse_output": false,
+          "transformed_features": 30
+        },
+        "v2": {
+          "drop": null,
+          "handle_unknown": "ignore",
+          "sparse_output": true,
+          "transformed_features": 45
+        },
+        "exact_difference": "V1 uses drop='first' (30 columns, a reference-level baseline per categorical). V2 uses drop=None (45 columns, every level). The feature spaces are structurally different, so a transformed matrix or a stored attribution from one is not interchangeable with the other."
+      },
+      "fitted_internal_imputation": {
+        "status": "DIFFERENT",
+        "v1": "No SimpleImputer; hygiene comes from the shared prepare_frame.",
+        "v2": "SimpleImputer on BOTH the numeric and categorical blocks.",
+        "exact_difference": "V2's preprocessing is self-contained inside the pipeline; V1 depends on external hygiene."
+      }
+    }
+  },
+  "probability_statistics": {
+    "mean_absolute_difference": 0.04832151096538067,
+    "median_absolute_difference": 0.03169961270180108,
+    "max_absolute_difference": 0.28033248746687733,
+    "std_of_differences": 0.04515868543466313,
+    "correlation_v1_v2": 0.962982996128655,
+    "min_v1_probability": 0.001745249066341818,
+    "max_v1_probability": 0.8551070041781572,
+    "min_v2_probability": 0.020815689462726106,
+    "max_v2_probability": 0.8885659907991135,
+    "interpretation": "Behavioural difference only. These numbers do not rank the bundles and do not indicate which is better."
+  },
+  "label_agreement_statistics": {
+    "total_rows": 1409,
+    "v1_predicted_churn": 318,
+    "v2_predicted_churn": 275,
+    "label_agreement": 1310,
+    "label_disagreement": 99,
+    "disagreement_percentage": 7.026259758694109,
+    "threshold": 0.5,
+    "confusion_matrix_v1_rows_v2_cols": {
+      "both_No": 1063,
+      "v1_No_v2_Yes": 28,
+      "v1_Yes_v2_No": 71,
+      "both_Yes": 247
+    },
+    "interpretation": "Model-behaviour comparison only. No bundle is labelled better."
+  },
+  "disagreement_summary": {
+    "total_disagreements": 99,
+    "sampled": 25,
+    "sample_rule": "first N disagreement indices in row order (deterministic)",
+    "rows": [
+      {
+        "row_index": 26,
+        "v1_probability": 0.571568,
+        "v2_probability": 0.38382,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.187748,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 36,
+        "v1_probability": 0.378976,
+        "v2_probability": 0.501651,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.122675,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 90,
+        "v1_probability": 0.6207,
+        "v2_probability": 0.463727,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.156973,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 94,
+        "v1_probability": 0.296718,
+        "v2_probability": 0.516505,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.219786,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 96,
+        "v1_probability": 0.430407,
+        "v2_probability": 0.533339,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.102932,
+        "true_label": "No"
+      },
+      {
+        "row_index": 102,
+        "v1_probability": 0.523915,
+        "v2_probability": 0.486164,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.037751,
+        "true_label": "No"
+      },
+      {
+        "row_index": 116,
+        "v1_probability": 0.505417,
+        "v2_probability": 0.498919,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.006498,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 128,
+        "v1_probability": 0.662496,
+        "v2_probability": 0.474467,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.188029,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 151,
+        "v1_probability": 0.512039,
+        "v2_probability": 0.452297,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.059742,
+        "true_label": "No"
+      },
+      {
+        "row_index": 158,
+        "v1_probability": 0.435787,
+        "v2_probability": 0.578318,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.142532,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 159,
+        "v1_probability": 0.513335,
+        "v2_probability": 0.389351,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.123984,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 175,
+        "v1_probability": 0.537755,
+        "v2_probability": 0.478275,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.05948,
+        "true_label": "No"
+      },
+      {
+        "row_index": 194,
+        "v1_probability": 0.511097,
+        "v2_probability": 0.435723,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.075374,
+        "true_label": "No"
+      },
+      {
+        "row_index": 211,
+        "v1_probability": 0.370113,
+        "v2_probability": 0.517348,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.147235,
+        "true_label": "No"
+      },
+      {
+        "row_index": 217,
+        "v1_probability": 0.527841,
+        "v2_probability": 0.451983,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.075858,
+        "true_label": "No"
+      },
+      {
+        "row_index": 218,
+        "v1_probability": 0.531019,
+        "v2_probability": 0.495148,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.035871,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 231,
+        "v1_probability": 0.630771,
+        "v2_probability": 0.498181,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.13259,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 239,
+        "v1_probability": 0.576777,
+        "v2_probability": 0.463527,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.113251,
+        "true_label": "No"
+      },
+      {
+        "row_index": 241,
+        "v1_probability": 0.556514,
+        "v2_probability": 0.497772,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.058742,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 244,
+        "v1_probability": 0.414061,
+        "v2_probability": 0.573734,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.159673,
+        "true_label": "Yes"
+      },
+      {
+        "row_index": 269,
+        "v1_probability": 0.475818,
+        "v2_probability": 0.60318,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.127362,
+        "true_label": "No"
+      },
+      {
+        "row_index": 270,
+        "v1_probability": 0.548903,
+        "v2_probability": 0.472537,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.076366,
+        "true_label": "No"
+      },
+      {
+        "row_index": 277,
+        "v1_probability": 0.620104,
+        "v2_probability": 0.453344,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.166761,
+        "true_label": "No"
+      },
+      {
+        "row_index": 280,
+        "v1_probability": 0.566281,
+        "v2_probability": 0.492509,
+        "v1_label": "Yes",
+        "v2_label": "No",
+        "absolute_probability_difference": 0.073772,
+        "true_label": "No"
+      },
+      {
+        "row_index": 284,
+        "v1_probability": 0.499824,
+        "v2_probability": 0.511043,
+        "v1_label": "No",
+        "v2_label": "Yes",
+        "absolute_probability_difference": 0.011219,
+        "true_label": "No"
+      }
+    ],
+    "pii_note": "Row index only; no customerID, name or other identifier is written to the audit artifact."
+  },
+  "threshold_proximity": {
+    "band": [
+      0.45,
+      0.55
+    ],
+    "threshold": 0.5,
+    "v1_in_band": 129,
+    "v2_in_band": 117,
+    "v1_band_percentage": 9.15542938254081,
+    "v2_band_percentage": 8.30376153300213,
+    "disagreements_near_threshold": 82,
+    "note": "A row can be near the threshold for either bundle, so this disagreement count is over the UNION of the two bands, not the sum of two disjoint sets. The threshold is unchanged."
+  },
+  "single_batch_parity": {
+    "v1": {
+      "bundle_version": "v1",
+      "rows_checked": 25,
+      "max_probability_delta": 1.1102230246251565e-16,
+      "probability_parity": true,
+      "label_parity": true,
+      "label_disagreements": 0,
+      "threshold": 0.5,
+      "note": "Single-row scoring and the equivalent one-row batch must agree; this must pass independently per bundle."
+    },
+    "v2": {
+      "bundle_version": "v2",
+      "rows_checked": 25,
+      "max_probability_delta": 0.0,
+      "probability_parity": true,
+      "label_parity": true,
+      "label_disagreements": 0,
+      "threshold": 0.5,
+      "note": "Single-row scoring and the equivalent one-row batch must agree; this must pass independently per bundle."
+    }
+  },
+  "determinism": {
+    "runs": 2,
+    "v1_run1_equals_run2": true,
+    "v2_run1_equals_run2": true,
+    "field_level_identity": {
+      "v1_prob": true,
+      "v2_prob": true,
+      "v1_label": true,
+      "v2_label": true,
+      "v1_threshold_label": true,
+      "v2_threshold_label": true
+    },
+    "deterministic": true,
+    "note": "Both bundles are pure fitted transforms, so repeated runs must be bit-identical; no random variation is expected."
+  },
+  "xai_compatibility": {
+    "explained_via": "backend/explainability.py (read-only, unmodified)",
+    "sample_size": 20,
+    "random_state": 42,
+    "bundles": {
+      "v1": {
+        "bundle_version": "v1",
+        "model_bundle_accepted_directly": false,
+        "model_bundle_accepted_directly_error": "XAIUnsupportedModelError: Unsupported fitted model of type 'ModelBundle'. Pass a backend.model.ChurnModel, a fitted sklearn Pipeline, or a ModelView.",
+        "native_object_accepted": true,
+        "native_object_error": null,
+        "explainer_type": "LinearExplainer",
+        "transformed_feature_count": 30,
+        "transformed_features_head": [
+          "num__SeniorCitizen",
+          "num__tenure",
+          "num__MonthlyCharges",
+          "num__TotalCharges"
+        ],
+        "estimator_n_features_in": 30,
+        "shap_output_shape": [
+          20,
+          30
+        ],
+        "base_value": -1.8142352934405266,
+        "importance_rows": 30,
+        "deterministic_output": true
+      },
+      "v2": {
+        "bundle_version": "v2",
+        "model_bundle_accepted_directly": false,
+        "model_bundle_accepted_directly_error": "XAIUnsupportedModelError: Unsupported fitted model of type 'ModelBundle'. Pass a backend.model.ChurnModel, a fitted sklearn Pipeline, or a ModelView.",
+        "native_object_accepted": true,
+        "native_object_error": null,
+        "explainer_type": "TreeExplainer",
+        "transformed_feature_count": 45,
+        "transformed_features_head": [
+          "num__SeniorCitizen",
+          "num__tenure",
+          "num__MonthlyCharges",
+          "num__TotalCharges"
+        ],
+        "estimator_n_features_in": 45,
+        "shap_output_shape": [
+          20,
+          45
+        ],
+        "base_value": -1.4738872079206182,
+        "importance_rows": 45,
+        "deterministic_output": true
+      }
+    },
+    "note": "Explainer type is selected from the fitted estimator (LinearExplainer for V1's LogisticRegression, TreeExplainer for V2's GradientBoostingClassifier), never hard-coded."
+  },
+  "blockers": [
+    {
+      "id": "BLOCKER-01",
+      "title": "Raw input contract is NOT drop-in compatible",
+      "severity": "BLOCKING",
+      "area": "1. Raw schema",
+      "detail": "Both bundles declare the same 19 required raw columns and both ignore extra columns, so the column NAME set agrees. The accepted VALUE space differs on SeniorCitizen: V2's median SimpleImputer rejects the text values 'Yes'/'No' that V1 accepts.",
+      "blocks_promotion": true
+    },
+    {
+      "id": "BLOCKER-02",
+      "title": "Categorical domains agree, but unknown values differ",
+      "severity": "BLOCKING",
+      "area": "2. Categorical domains / 15. Error handling",
+      "detail": "The fitted domains are identical across V1 and V2 (verified from each encoder's categories_). The DIFFERENCE is the handling of an out-of-domain value: V1's _validate_categoricals raises ValueError, while V2's handle_unknown='ignore' with drop=None silently produces an all-zeros column, i.e. a confidently wrong score. Migrating V2 in place of V1 would silently remove the project's loud-failure guard on typos.",
+      "blocks_promotion": true
+    },
+    {
+      "id": "BLOCKER-03",
+      "title": "Numeric NaN handling differs",
+      "severity": "BLOCKING",
+      "area": "3. Numeric handling / 6. NaN behavior",
+      "detail": "A NaN in tenure/MonthlyCharges/SeniorCitizen is imputed by V2's fitted SimpleImputer but reaches V1's StandardScaler unimputed. The bundles therefore disagree on a missing numeric input, so behaviour would change on migration for incomplete rows.",
+      "blocks_promotion": true
+    },
+    {
+      "id": "BLOCKER-04",
+      "title": "TotalCharges imputation mechanism differs (value identical)",
+      "severity": "NON-BLOCKING",
+      "area": "4. TotalCharges handling",
+      "detail": "Both impute a missing TotalCharges with the same persisted median 1394.925, so the VALUE agrees. The mechanism differs (V1 external fillna, V2 fitted SimpleImputer) and V2 additionally imputes the other three numeric columns. Behaviour-equivalent for a missing TotalCharges.",
+      "blocks_promotion": false
+    },
+    {
+      "id": "BLOCKER-05",
+      "title": "Categorical NaN handling differs (error vs silent imputation)",
+      "severity": "BLOCKING",
+      "area": "6. NaN behavior / 15. Error handling",
+      "detail": "A NaN categorical raises TypeError under V1 but is silently replaced by the modal level under V2. Same input: either an exception or a silent score, depending on bundle.",
+      "blocks_promotion": true
+    },
+    {
+      "id": "BLOCKER-06",
+      "title": "Infinity handling is compatible",
+      "severity": "NON-BLOCKING",
+      "area": "7. Infinity behavior",
+      "detail": "Both bundles reject non-finite numeric input at the fitted transformer with a ValueError, so neither silently scores +/-inf. No migration risk here.",
+      "blocks_promotion": false
+    },
+    {
+      "id": "BLOCKER-07",
+      "title": "Class semantics differ in ENCODING but agree in SEMANTICS",
+      "severity": "NON-BLOCKING",
+      "area": "8. Class semantics / 9. Positive probability semantics",
+      "detail": "V1's classes_ are ints [0, 1] with positive class 1; V2's are strings ['No', 'Yes'] with positive class 'Yes'. Both resolve the same churn semantics ('Yes'), and the positive probability column is selected by a validated class index here, never a hardcoded 1. A migration must map the int 0/1 encoding to Yes/No at the UI boundary.",
+      "blocks_promotion": false
+    },
+    {
+      "id": "BLOCKER-08",
+      "title": "Transformed feature representation differs (30 vs 45)",
+      "severity": "BLOCKING",
+      "area": "14. Transformed feature representation",
+      "detail": "V1 emits 30 one-hot columns (drop='first', a reference baseline per categorical); V2 emits 45 (drop=None, every level). The feature spaces are structurally different, so a transformed matrix or a stored SHAP attribution from one is not interchangeable with the other, and any downstream consumer assuming 30 columns would break.",
+      "blocks_promotion": true
+    },
+    {
+      "id": "BLOCKER-09",
+      "title": "backend.explainability does not accept a ModelBundle directly",
+      "severity": "BLOCKING",
+      "area": "13. XAI behavior",
+      "detail": "explainability._as_model_view raises XAIUnsupportedModelError for a backend.model_bundle.ModelBundle, accepting only a ChurnModel, a fitted Pipeline, or a ModelView. Both bundles ARE explainable via their native fitted objects, but wiring a bundle into the XAI layer needs a change to explainability.py, which this audit must not (and did not) make.",
+      "blocks_promotion": true
+    },
+    {
+      "id": "BLOCKER-10",
+      "title": "Error-type differences on missing columns",
+      "severity": "NON-BLOCKING",
+      "area": "15. Error handling",
+      "detail": "Both reject a missing required column, but V1 raises ValueError naming the field while V2 surfaces sklearn's 'columns are missing'. Cosmetic, but it may surface in UI error messaging.",
+      "blocks_promotion": false
+    }
+  ],
+  "warnings": [
+    "WARN-01: V1 exposes 30 transformed features and V2 exposes 45; a hard-coded width assumption downstream would break on migration.",
+    "WARN-02: This is a BEHAVIOURAL difference audit only. The probability and label statistics do not rank the bundles and do not indicate which model is better.",
+    "WARN-03: The Phase 3C 0.25 threshold remains analysis-only; the production threshold is 0.50 and was not changed by this audit.",
+    "WARN-04: Disagreement rows are identified by positional index only; the audit artifact contains no customer identifiers (no PII).",
+    "WARN-05: No promotion was performed. active_bundle.json still points to v1 and production inference still uses the legacy LogisticRegression."
+  ],
+  "hash_verification": {
+    "all_unchanged": true,
+    "n_artifacts": 9,
+    "artifacts": {
+      "models/best_model.pkl": {
+        "present": true,
+        "sha256": "66400195eb9cfef8afaaf9ee59ee83e19baa1e9afa70a4ddc9fc49ce80d9010e",
+        "expected_sha256": "66400195eb9cfef8afaaf9ee59ee83e19baa1e9afa70a4ddc9fc49ce80d9010e",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/preprocessor.pkl": {
+        "present": true,
+        "sha256": "fcc2d4e47fa218fce6056f7904e4b54f7f9c58fdd6ccbd04ff20b7a5210e028f",
+        "expected_sha256": "fcc2d4e47fa218fce6056f7904e4b54f7f9c58fdd6ccbd04ff20b7a5210e028f",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/results.pkl": {
+        "present": true,
+        "sha256": "5b42735ce812f4ebdffeb2bb4b2abe6afacecb3fdefd3d836a0d425dc473753c",
+        "expected_sha256": "5b42735ce812f4ebdffeb2bb4b2abe6afacecb3fdefd3d836a0d425dc473753c",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/feature_names.pkl": {
+        "present": true,
+        "sha256": "b0e5ae0e650cb9421334ee5f88163fd7769e8dce9c0d27f9161fc4e10aaad9a4",
+        "expected_sha256": "b0e5ae0e650cb9421334ee5f88163fd7769e8dce9c0d27f9161fc4e10aaad9a4",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/total_charges_median.pkl": {
+        "present": true,
+        "sha256": "ae6e77cba1892e0da00efae88517d3eb4299d925bb6a4f0aad1283ead8cb7640",
+        "expected_sha256": "ae6e77cba1892e0da00efae88517d3eb4299d925bb6a4f0aad1283ead8cb7640",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/experiments/champion.pkl": {
+        "present": true,
+        "sha256": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589",
+        "expected_sha256": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/bundles/v1/model.pkl": {
+        "present": true,
+        "sha256": "66400195eb9cfef8afaaf9ee59ee83e19baa1e9afa70a4ddc9fc49ce80d9010e",
+        "expected_sha256": "66400195eb9cfef8afaaf9ee59ee83e19baa1e9afa70a4ddc9fc49ce80d9010e",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/bundles/v1/preprocessor.pkl": {
+        "present": true,
+        "sha256": "fcc2d4e47fa218fce6056f7904e4b54f7f9c58fdd6ccbd04ff20b7a5210e028f",
+        "expected_sha256": "fcc2d4e47fa218fce6056f7904e4b54f7f9c58fdd6ccbd04ff20b7a5210e028f",
+        "matches": true,
+        "unchanged": true
+      },
+      "models/bundles/v2/model.pkl": {
+        "present": true,
+        "sha256": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589",
+        "expected_sha256": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589",
+        "matches": true,
+        "unchanged": true
+      }
+    }
+  },
+  "interpretation": "Compatibility and behavioural differences only. This audit contains no winner, ranking, score or promotion recommendation."
+}

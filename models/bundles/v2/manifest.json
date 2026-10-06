@@ -1,0 +1,181 @@
+{
+ "schema_version": "1.0",
+ "bundle_version": "v2",
+ "model_type": "Pipeline",
+ "artifacts": {
+  "model": {
+   "path": "model.pkl",
+   "sha256": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589"
+  }
+ },
+ "model_format": "pipeline",
+ "schema": {
+  "required_cols": [
+   "gender",
+   "Partner",
+   "Dependents",
+   "PhoneService",
+   "MultipleLines",
+   "InternetService",
+   "OnlineSecurity",
+   "OnlineBackup",
+   "DeviceProtection",
+   "TechSupport",
+   "StreamingTV",
+   "StreamingMovies",
+   "Contract",
+   "PaperlessBilling",
+   "PaymentMethod",
+   "SeniorCitizen",
+   "tenure",
+   "MonthlyCharges",
+   "TotalCharges"
+  ],
+  "categorical_domains": {
+   "gender": [
+    "Female",
+    "Male"
+   ],
+   "Partner": [
+    "No",
+    "Yes"
+   ],
+   "Dependents": [
+    "No",
+    "Yes"
+   ],
+   "PhoneService": [
+    "No",
+    "Yes"
+   ],
+   "MultipleLines": [
+    "No",
+    "No phone service",
+    "Yes"
+   ],
+   "InternetService": [
+    "DSL",
+    "Fiber optic",
+    "No"
+   ],
+   "OnlineSecurity": [
+    "No",
+    "No internet service",
+    "Yes"
+   ],
+   "OnlineBackup": [
+    "No",
+    "No internet service",
+    "Yes"
+   ],
+   "DeviceProtection": [
+    "No",
+    "No internet service",
+    "Yes"
+   ],
+   "TechSupport": [
+    "No",
+    "No internet service",
+    "Yes"
+   ],
+   "StreamingTV": [
+    "No",
+    "No internet service",
+    "Yes"
+   ],
+   "StreamingMovies": [
+    "No",
+    "No internet service",
+    "Yes"
+   ],
+   "Contract": [
+    "Month-to-month",
+    "One year",
+    "Two year"
+   ],
+   "PaperlessBilling": [
+    "No",
+    "Yes"
+   ],
+   "PaymentMethod": [
+    "Bank transfer (automatic)",
+    "Credit card (automatic)",
+    "Electronic check",
+    "Mailed check"
+   ]
+  },
+  "numeric_cols": [
+   "SeniorCitizen",
+   "tenure",
+   "MonthlyCharges",
+   "TotalCharges"
+  ]
+ },
+ "inference": {
+  "classes": [
+   "No",
+   "Yes"
+  ],
+  "positive_class": "Yes",
+  "positive_class_index": 1,
+  "decision_threshold": 0.5,
+  "total_charges_median": 1394.925
+ },
+ "features": {
+  "transformed_feature_count": 45,
+  "transformed_features": [
+   "num__SeniorCitizen",
+   "num__tenure",
+   "num__MonthlyCharges",
+   "num__TotalCharges",
+   "cat__gender_Female",
+   "cat__gender_Male",
+   "cat__Partner_No",
+   "cat__Partner_Yes",
+   "cat__Dependents_No",
+   "cat__Dependents_Yes",
+   "cat__PhoneService_No",
+   "cat__PhoneService_Yes",
+   "cat__MultipleLines_No",
+   "cat__MultipleLines_No phone service",
+   "cat__MultipleLines_Yes",
+   "cat__InternetService_DSL",
+   "cat__InternetService_Fiber optic",
+   "cat__InternetService_No",
+   "cat__OnlineSecurity_No",
+   "cat__OnlineSecurity_No internet service",
+   "cat__OnlineSecurity_Yes",
+   "cat__OnlineBackup_No",
+   "cat__OnlineBackup_No internet service",
+   "cat__OnlineBackup_Yes",
+   "cat__DeviceProtection_No",
+   "cat__DeviceProtection_No internet service",
+   "cat__DeviceProtection_Yes",
+   "cat__TechSupport_No",
+   "cat__TechSupport_No internet service",
+   "cat__TechSupport_Yes",
+   "cat__StreamingTV_No",
+   "cat__StreamingTV_No internet service",
+   "cat__StreamingTV_Yes",
+   "cat__StreamingMovies_No",
+   "cat__StreamingMovies_No internet service",
+   "cat__StreamingMovies_Yes",
+   "cat__Contract_Month-to-month",
+   "cat__Contract_One year",
+   "cat__Contract_Two year",
+   "cat__PaperlessBilling_No",
+   "cat__PaperlessBilling_Yes",
+   "cat__PaymentMethod_Bank transfer (automatic)",
+   "cat__PaymentMethod_Credit card (automatic)",
+   "cat__PaymentMethod_Electronic check",
+   "cat__PaymentMethod_Mailed check"
+  ]
+ },
+ "metadata": {
+  "model_type": "GradientBoostingClassifier",
+  "training_timestamp": "2026-09-27T14:03:27",
+  "python_version": "3.13.14",
+  "sklearn_version": "1.6.1",
+  "dataset_hash": "N/A"
+ }
+}

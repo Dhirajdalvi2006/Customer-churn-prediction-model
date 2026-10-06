@@ -1,0 +1,19 @@
+{
+  "previous_active_version": "v1",
+  "promoted_version": "v2",
+  "model_type": "GradientBoostingClassifier",
+  "model_format": "pipeline",
+  "positive_class": "Yes",
+  "decision_threshold": 0.5,
+  "transformed_feature_count": 45,
+  "shadow_rows": 1409,
+  "shadow_label_disagreements": 99,
+  "shadow_disagreement_rate": 0.0703,
+  "shadow_max_probability_difference": 0.4906,
+  "shadow_mean_probability_difference": 0.0612,
+  "tests_passed": true,
+  "compile_passed": true,
+  "artifact_integrity_passed": true,
+  "rollback_verified": true,
+  "promotion_timestamp": "2026-09-30T04:33:21.583144+00:00"
+}

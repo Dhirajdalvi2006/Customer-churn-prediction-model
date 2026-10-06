@@ -1,0 +1,11 @@
+{
+  "models/best_model.pkl": "66400195eb9cfef8afaaf9ee59ee83e19baa1e9afa70a4ddc9fc49ce80d9010e",
+  "models/preprocessor.pkl": "fcc2d4e47fa218fce6056f7904e4b54f7f9c58fdd6ccbd04ff20b7a5210e028f",
+  "models/results.pkl": "5b42735ce812f4ebdffeb2bb4b2abe6afacecb3fdefd3d836a0d425dc473753c",
+  "models/feature_names.pkl": "b0e5ae0e650cb9421334ee5f88163fd7769e8dce9c0d27f9161fc4e10aaad9a4",
+  "models/total_charges_median.pkl": "ae6e77cba1892e0da00efae88517d3eb4299d925bb6a4f0aad1283ead8cb7640",
+  "models/experiments/champion.pkl": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589",
+  "models/bundles/v1/model.pkl": "66400195eb9cfef8afaaf9ee59ee83e19baa1e9afa70a4ddc9fc49ce80d9010e",
+  "models/bundles/v1/preprocessor.pkl": "fcc2d4e47fa218fce6056f7904e4b54f7f9c58fdd6ccbd04ff20b7a5210e028f",
+  "models/bundles/v2/model.pkl": "372ddf6c9ec977460d078a244a97b8781295394bc8f54acb2dc8031f3b736589"
+}
