@@ -1,40 +1,40 @@
 import os
 import sys
 
-# Ensure root directory and current working directory are in sys.path for Streamlit Cloud & Vercel
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-for path in [ROOT_DIR, os.getcwd(), os.path.abspath(".")]:
-    if path and path not in sys.path:
-        sys.path.insert(0, path)
+# Locate directory containing 'backend' and 'frontend' packages deterministically
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+candidate_dirs = [
+    CURRENT_DIR,
+    os.getcwd(),
+    os.path.abspath("."),
+    os.path.dirname(CURRENT_DIR),
+    "/mount/src/customer-churn-prediction-model",
+    "/mount/src/customer_churn_project",
+]
+
+for d in candidate_dirs:
+    if d and os.path.isdir(os.path.join(d, "backend")) and os.path.isdir(os.path.join(d, "frontend")):
+        if d in sys.path:
+            sys.path.remove(d)
+        sys.path.insert(0, d)
+        break
+else:
+    if CURRENT_DIR not in sys.path:
+        sys.path.insert(0, CURRENT_DIR)
 
 import streamlit as st
 import pandas as pd
 
-try:
-    from backend.model import load_data
-    from backend.prediction_service import get_prediction_service, PredictionServiceError
-    from frontend.styles import inject_custom_css
-    from frontend.views_executive import show_executive_command_center
-    from frontend.views_eda import show_exploratory_intelligence
-    from frontend.views_drivers import show_churn_drivers_and_ecosystem
-    from frontend.views_predict import show_ai_prediction_and_simulator
-    from frontend.views_models import show_model_evaluation_and_explainability
-    from frontend.views_strategy import show_retention_roi_and_playbook
-    from frontend.views_bulk import show_bulk_prediction_studio
-except ModuleNotFoundError:
-    parent_dir = os.path.abspath(os.path.join(ROOT_DIR, ".."))
-    if parent_dir not in sys.path:
-        sys.path.insert(0, parent_dir)
-    from backend.model import load_data
-    from backend.prediction_service import get_prediction_service, PredictionServiceError
-    from frontend.styles import inject_custom_css
-    from frontend.views_executive import show_executive_command_center
-    from frontend.views_eda import show_exploratory_intelligence
-    from frontend.views_drivers import show_churn_drivers_and_ecosystem
-    from frontend.views_predict import show_ai_prediction_and_simulator
-    from frontend.views_models import show_model_evaluation_and_explainability
-    from frontend.views_strategy import show_retention_roi_and_playbook
-    from frontend.views_bulk import show_bulk_prediction_studio
+from backend.model import load_data
+from backend.prediction_service import get_prediction_service, PredictionServiceError
+from frontend.styles import inject_custom_css
+from frontend.views_executive import show_executive_command_center
+from frontend.views_eda import show_exploratory_intelligence
+from frontend.views_drivers import show_churn_drivers_and_ecosystem
+from frontend.views_predict import show_ai_prediction_and_simulator
+from frontend.views_models import show_model_evaluation_and_explainability
+from frontend.views_strategy import show_retention_roi_and_playbook
+from frontend.views_bulk import show_bulk_prediction_studio
 
 
 st.set_page_config(
