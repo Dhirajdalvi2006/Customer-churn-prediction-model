@@ -181,9 +181,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Top-level exports for Vercel / WSGI serverless deployment entry point checks
-def handler(request=None, response=None):
-    return main()
-
-app = application = handler
-

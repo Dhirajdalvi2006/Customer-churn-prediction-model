@@ -155,6 +155,19 @@ The application will launch automatically in your browser at `http://localhost:8
 
 ---
 
+## 🌐 Deploying to Streamlit Community Cloud
+
+1. Push your repository to GitHub:
+   ```bash
+   git add .
+   git commit -m "Streamlit deployment ready"
+   git push origin main
+   ```
+2. Log in to [share.streamlit.io](https://share.streamlit.io/).
+3. Click **New app**, select your repository, set **Main file path** to `app.py`, and click **Deploy**!
+
+---
+
 ## 🧪 Running Automated Tests
 
 To run the complete unit and integration test suite:
@@ -170,6 +183,7 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest
 
 ## 🔧 Bug Fixes & System Stability Improvements
 
+* **Streamlit Cloud Import Resolution:** Added deterministic root path resolution in `app.py` and `__init__.py` to ensure `from backend.model import load_data` resolves cleanly on Streamlit Cloud containers.
 * **Strategic Signals HTML Formatting Fix:** Resolved a raw text display issue where `st.markdown(..., unsafe_allow_html=True)` rendered raw `<div>` tags on screen due to blank line breaks interrupting CommonMark HTML block parsing. Streamlit HTML blocks are now continuous and unindented.
 * **Requirements Modernization:** Updated `requirements.txt` with clear sectioning and verified compatibility across Python 3.13, NumPy 2.x, pandas 3.0, scikit-learn 1.6+, and SHAP 0.48+.
 * **Bundle Architecture Integrity:** Implemented bundle pointer validation through `models/active_bundle.json` ensuring safe fallback error messaging and schema contract adherence across both single and batch predictions.
